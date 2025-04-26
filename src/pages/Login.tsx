@@ -130,7 +130,14 @@ const Login: React.FC = () => {
         font-size: 16px;
         font-weight: 400;
       }
-
+ ion-button {
+            --background: orange;
+            --color: black;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 0 10px orange;
+            border-radius: 8px;
+          }
       .register-text a {
         color: aqua;
         text-decoration: none;

@@ -120,7 +120,7 @@ const Register: React.FC = () => {
           }
     
           ion-button {
-            --background: aqua;
+            --background: orange;
             --color: black;
             font-weight: bold;
             margin-top: 10px;
@@ -129,8 +129,8 @@ const Register: React.FC = () => {
           }
     
           ion-button[fill="clear"] {
-            color: aqua;
-            --color: aqua;
+            color: orange;
+            --color: orange;
             --background-hover: rgba(0, 255, 255, 0.1);
             text-decoration: underline;
             margin-top: 5px;
@@ -139,7 +139,7 @@ const Register: React.FC = () => {
           }
     
           .login-input {
-            --color: aqua;
+            --color: orange;
             --placeholder-color: rgba(0, 255, 255, 0.5);
             --highlight-color-focused: aqua;
             --border-color: aqua;
@@ -156,7 +156,7 @@ const Register: React.FC = () => {
           }
     
           .login-input:hover {
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+            box-shadow: 0 0 20px rgba(234, 179, 15, 0.6);
             transform: scale(1.02);
             border-color: cyan;
           }
@@ -273,7 +273,7 @@ const Register: React.FC = () => {
                     <IonInputPasswordToggle slot="end" />
                 </IonInput>
 
-                <IonButton onClick={handleOpenVerificationModal} expand="full" shape='round' style={{ marginTop: '15px' ,color:'orange'}}>
+                <IonButton onClick={handleOpenVerificationModal} expand="full" shape='round' style={{ marginTop: '15px' ,color:'white'}}>
                     Register
                 </IonButton>
                 <p style={{ textAlign: 'center',color:'orange' }}>
@@ -299,7 +299,7 @@ const Register: React.FC = () => {
                             </IonCardHeader>
                             <IonCardContent></IonCardContent>
                             <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '5px' }}>
-                                <IonButton fill="clear" onClick={() => setShowVerificationModal(false)}>Cancel</IonButton>
+                                <IonButton fill="clear" color="white" onClick={() => setShowVerificationModal(false)}>Cancel</IonButton>
                                 <IonButton color="primary" onClick={doRegister}>Confirm</IonButton>
                             </div>
                         </IonCard>
