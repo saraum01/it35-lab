@@ -40,7 +40,6 @@ const Login: React.FC = () => {
     style.innerHTML = `
       ion-content {
         --background: transparent;
-        background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/08/bright-moon-in-the-forest-gif-desktop-wallpaper-preview.gif');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
