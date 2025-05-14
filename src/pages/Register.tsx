@@ -44,14 +44,11 @@ const Register: React.FC = () => {
     const [alertMessage, setAlertMessage] = useState('');
     const [showAlert, setShowAlert] = useState(false);
 
-
-
     useEffect(() => {
         const style = document.createElement('style');
         style.innerHTML = `
           ion-content {
             --background: transparent;
-           background-image: url('https://wallpapers-clan.com/wp-content/uploads/2024/08/bright-moon-in-the-forest-gif-desktop-wallpaper-preview.gif');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -67,22 +64,22 @@ const Register: React.FC = () => {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.65);
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 12px;
             backdrop-filter: blur(6px);
-            box-shadow: 0 0 20px aqua;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             max-width: 90%;
             margin: 25% auto 0 auto;
           }
     
           .login-avatar {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid aqua;
-            box-shadow: 0 0 12px aqua;
+            border: 3px solid #f5f5f5;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
           }
     
@@ -94,10 +91,10 @@ const Register: React.FC = () => {
           }
     
           .login-header {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 0 0 8px aqua;
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             text-align: center;
             margin-bottom: 20px;
           }
@@ -108,30 +105,30 @@ const Register: React.FC = () => {
     
           ion-input {
             width: 100%;
-            --background: #111;
-            --color: white;
-            --placeholder-color: #aaa;
-            --highlight-color-focused: aqua;
-            --border-color: aqua;
+            --background: #fafafa;
+            --color: #333;
+            --placeholder-color: #999;
+            --highlight-color-focused: #555;
+            --border-color: #ddd;
             --padding-start: 16px;
             --padding-end: 16px;
             margin-bottom: 10px;
-            border-radius: 10px;
+            border-radius: 8px;
           }
     
           ion-button {
-            --background: orange;
-            --color: black;
-            font-weight: bold;
+            --background: #555;
+            --color: white;
+            font-weight: 500;
             margin-top: 10px;
-            box-shadow: 0 0 10px aqua;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
           }
     
           ion-button[fill="clear"] {
-            color: orange;
-            --color: orange;
-            --background-hover: rgba(0, 255, 255, 0.1);
+            color: #555;
+            --color: #555;
+            --background-hover: rgba(0, 0, 0, 0.05);
             text-decoration: underline;
             margin-top: 5px;
             font-size: 14px;
@@ -139,58 +136,55 @@ const Register: React.FC = () => {
           }
     
           .login-input {
-            --color: orange;
-            --placeholder-color: rgba(0, 255, 255, 0.5);
-            --highlight-color-focused: aqua;
-            --border-color: aqua;
-            color: aqua;
+            --color: #333;
+            --placeholder-color: #999;
+            --highlight-color-focused: #555;
+            --border-color: #ccc;
+            color: #333;
             margin-bottom: 16px;
             font-size: 16px;
             --padding-start: 12px;
             --padding-end: 12px;
             --padding-top: 14px;
             --padding-bottom: 14px;
-            transition: all 0.3s ease;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
           }
     
           .login-input:hover {
-            box-shadow: 0 0 20px rgba(234, 179, 15, 0.6);
-            transform: scale(1.02);
-            border-color: cyan;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.01);
           }
     
           .login-input:focus-within {
-            box-shadow: 0 0 25px rgba(226, 167, 17, 0.8);
-            border-color: deepskyblue;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
           }
     
           .register-text {
             margin-top: 20px;
             text-align: center;
-            color: white;
+            color: #555;
             font-size: 16px;
             font-weight: 400;
           }
     
           .register-text a {
-            color: orange;
+            color: #555;
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease, text-shadow 0.3s ease;
+            transition: color 0.2s ease;
           }
     
           .register-text a:hover {
-            color:rgb(223, 170, 23);
-            text-shadow: 0 0 10px orange;
+            color: #222;
           }
         `;
         document.head.appendChild(style);
         return () => {
           document.head.removeChild(style);
         };
-      }, []);
+    }, []);
 
     const handleOpenVerificationModal = () => {
         if (!email.endsWith("@nbsc.edu.ph")) {
@@ -253,38 +247,146 @@ const Register: React.FC = () => {
     return (
         <IonPage>
             <IonContent className='ion-padding'>
-            <h1 style={{
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: 'white',
-  textShadow: '0 0 12px orange',
-  fontSize: '3rem'
-}}>Create your account</h1>
+                <h1 style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#333',
+                    textShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                    fontSize: '2.5rem',
+                    marginTop: '5%',
+                    marginBottom: '20px'
+                }}>Create your account</h1>
 
-                <IonInput label="Username" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter a unique username" value={username} onIonChange={e => setUsername(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} />
-                <IonInput label="First Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your first name" value={firstName} onIonChange={e => setFirstName(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} />
-                <IonInput label="Last Name" labelPlacement="stacked" fill="outline" type="text" placeholder="Enter your last name" value={lastName} onIonChange={e => setLastName(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} />
-                <IonInput label="Email" labelPlacement="stacked" fill="outline" type="email" placeholder="youremail@nbsc.edu.ph" value={email} onIonChange={e => setEmail(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} />
-                <IonInput label="Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Enter password" value={password} onIonChange={e => setPassword(e.detail.value!)} style={{ marginTop: '15px' ,color:'orange'}} >
+                <IonInput 
+                    label="Username" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="text" 
+                    placeholder="Enter a unique username" 
+                    value={username} 
+                    onIonChange={e => setUsername(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }} 
+                />
+                
+                <IonInput 
+                    label="First Name" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="text" 
+                    placeholder="Enter your first name" 
+                    value={firstName} 
+                    onIonChange={e => setFirstName(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }} 
+                />
+                
+                <IonInput 
+                    label="Last Name" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="text" 
+                    placeholder="Enter your last name" 
+                    value={lastName} 
+                    onIonChange={e => setLastName(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }} 
+                />
+                
+                <IonInput 
+                    label="Email" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="email" 
+                    placeholder="youremail@nbsc.edu.ph" 
+                    value={email} 
+                    onIonChange={e => setEmail(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }} 
+                />
+                
+                <IonInput 
+                    label="Password" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="password" 
+                    placeholder="Enter password" 
+                    value={password} 
+                    onIonChange={e => setPassword(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }}
+                >
                     <IonInputPasswordToggle slot="end" />
                 </IonInput>
-                <IonInput label="Confirm Password" labelPlacement="stacked" fill="outline" type="password" placeholder="Confirm password" value={confirmPassword} onIonChange={e => setConfirmPassword(e.detail.value!)} style={{ marginTop: '15px',color:'orange' }} >
+                
+                <IonInput 
+                    label="Confirm Password" 
+                    labelPlacement="stacked" 
+                    fill="outline" 
+                    type="password" 
+                    placeholder="Confirm password" 
+                    value={confirmPassword} 
+                    onIonChange={e => setConfirmPassword(e.detail.value!)} 
+                    style={{ 
+                        marginTop: '15px',
+                        color: '#333',
+                        '--highlight-color-focused': '#555',
+                        '--border-color': '#ddd',
+                        '--placeholder-color': '#999'
+                    }}
+                >
                     <IonInputPasswordToggle slot="end" />
                 </IonInput>
 
-                <IonButton onClick={handleOpenVerificationModal} expand="full" shape='round' style={{ marginTop: '15px' ,color:'white'}}>
+                <IonButton 
+                    onClick={handleOpenVerificationModal} 
+                    expand="full" 
+                    shape='round' 
+                    style={{ 
+                        marginTop: '20px'
+                    }}
+                >
                     Register
                 </IonButton>
-                <p style={{ textAlign: 'center',color:'orange' }}>
-  Already have an account? <a href="/it35-lab">Sign in</a>
-</p>
-
+                
+                <p style={{ 
+                    textAlign: 'center',
+                    color: '#555',
+                    marginTop: '15px'
+                }}>
+                    Already have an account? <a href="/it35-lab" style={{ color: '#555', fontWeight: '500' }}>Sign in</a>
+                </p>
 
                 {/* Verification Modal */}
                 <IonModal isOpen={showVerificationModal} onDidDismiss={() => setShowVerificationModal(false)}>
                     <IonContent className="ion-padding">
-                        <IonCard className="ion-padding" style={{ marginTop: '25%' ,color:'orange'}}>
+                        <IonCard className="ion-padding" style={{ marginTop: '25%', color: '#333' }}>
                             <IonCardHeader>
                                 <IonCardTitle>User Registration Details</IonCardTitle>
                                 <hr />
@@ -299,8 +401,8 @@ const Register: React.FC = () => {
                             </IonCardHeader>
                             <IonCardContent></IonCardContent>
                             <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '5px' }}>
-                                <IonButton fill="clear" color="white" onClick={() => setShowVerificationModal(false)}>Cancel</IonButton>
-                                <IonButton color="primary" onClick={doRegister}>Confirm</IonButton>
+                                <IonButton fill="clear" color="medium" onClick={() => setShowVerificationModal(false)}>Cancel</IonButton>
+                                <IonButton color="dark" onClick={doRegister}>Confirm</IonButton>
                             </div>
                         </IonCard>
                     </IonContent>
@@ -309,12 +411,12 @@ const Register: React.FC = () => {
                 {/* Success Modal */}
                 <IonModal isOpen={showSuccessModal} onDidDismiss={() => setShowSuccessModal(false)}>
                     <IonContent className="ion-padding" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh', textAlign: 'center', marginTop: '35%' }}>
-                        <IonTitle style={{ marginTop: '35%' }}>Registration Successful 🎉</IonTitle>
-                        <IonText>
+                        <IonTitle style={{ marginTop: '35%', color: '#333' }}>Registration Successful 🎉</IonTitle>
+                        <IonText color="medium">
                             <p>Your account has been created successfully.</p>
                             <p>Please check your email address.</p>
                         </IonText>
-                        <IonButton routerLink="/it35-lab" routerDirection="back" color="primary">
+                        <IonButton routerLink="/it35-lab" routerDirection="back" color="dark">
                             Go to Login
                         </IonButton>
                     </IonContent>

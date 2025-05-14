@@ -55,22 +55,22 @@ const Login: React.FC = () => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(255, 255, 255, 0.9);
         padding: 30px;
-        border-radius: 20px;
+        border-radius: 12px;
         backdrop-filter: blur(6px);
-        box-shadow: 0 0 20px aqua;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         max-width: 90%;
         margin: 25% auto 0 auto;
       }
 
       .login-avatar {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         overflow: hidden;
-        border: 5px solid white;
-        box-shadow: 0 0 12px orange;
+        border: 3px solid #f5f5f5;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px;
       }
 
@@ -83,70 +83,69 @@ const Login: React.FC = () => {
 
       ion-input {
         width: 100%;
-        --background: #111;
-        --color: white;
-        --placeholder-color: #aaa;
-        --highlight-color-focused: aqua;
-        --border-color: aqua;
+        --background: #fafafa;
+        --color: #333;
+        --placeholder-color: #999;
+        --highlight-color-focused: #555;
+        --border-color: #ddd;
         --padding-start: 16px;
         --padding-end: 16px;
         margin-bottom: 10px;
-        border-radius: 10px;
+        border-radius: 8px;
       }
 
       .login-input {
-        --color: aqua;
-        --placeholder-color: rgba(0, 255, 255, 0.5);
-        --highlight-color-focused: aqua;
-        --border-color: aqua;
-        color: aqua;
+        --color: #333;
+        --placeholder-color: #999;
+        --highlight-color-focused: #555;
+        --border-color: #ccc;
+        color: #333;
         margin-bottom: 16px;
         font-size: 16px;
         --padding-start: 12px;
         --padding-end: 12px;
         --padding-top: 14px;
         --padding-bottom: 14px;
-        transition: all 0.3s ease;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        transition: all 0.2s ease;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
       }
 
       .login-input:hover {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-        transform: scale(1.02);
-        border-color: cyan;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        transform: scale(1.01);
       }
 
       .login-input:focus-within {
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
-        border-color: deepskyblue;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
       }
 
       .register-text {
         margin-top: 20px;
         text-align: center;
-        color: white;
+        color: #555;
         font-size: 16px;
         font-weight: 400;
       }
- ion-button {
-            --background: orange;
-            --color: black;
-            font-weight: bold;
-            margin-top: 10px;
-            box-shadow: 0 0 10px orange;
-            border-radius: 8px;
-          }
+ 
+      ion-button {
+        --background: #555;
+        --color: white;
+        font-weight: 500;
+        margin-top: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      
       .register-text a {
-        color: aqua;
+        color: #555;
         text-decoration: none;
         font-weight: 600;
-        transition: color 0.3s ease, text-shadow 0.3s ease;
+        transition: color 0.2s ease;
       }
 
       .register-text a:hover {
-        color: #00ffff;
-        text-shadow: 0 0 10px aqua;
+        color: #222;
       }
     `;
     document.head.appendChild(style);
@@ -174,7 +173,7 @@ const Login: React.FC = () => {
       <IonContent className='ion-padding'>
         <div style={{
           display: 'flex',
-          color:'aqua',
+          color:'#555',
           flexDirection:'column',
           alignItems: 'center',
           justifyContent: 'center',
@@ -187,23 +186,23 @@ const Login: React.FC = () => {
           />
         </IonAvatar>
         <h1 style={{
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: 'white',
-  textShadow: '0 0 12px orange',
-  fontSize: '3rem'
-}}>
-  USER LOGIN
-</h1>
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#333',
+          textShadow: '0 1px 2px rgba(0,0,0,0.1)',
+          fontSize: '2.5rem'
+        }}>
+          USER LOGIN
+        </h1>
 
 
 <IonInput
   style={{
-    color: 'white',
-    '--highlight-color-focused': 'orange',
-    '--border-color': 'orange',
-    '--placeholder-color': 'white',
+    color: '#333',
+    '--highlight-color-focused': '#555',
+    '--border-color': '#ddd',
+    '--placeholder-color': '#999',
     '--background': 'transparent',
     fontSize: '1rem',
     marginTop: '10px'
@@ -220,10 +219,10 @@ const Login: React.FC = () => {
           <IonInput
   style={{
     marginTop: '10px',
-    color: 'white',
-    '--highlight-color-focused': 'orange',
-    '--border-color': 'orange',
-    '--placeholder-color': 'white',
+    color: '#333',
+    '--highlight-color-focused': '#555',
+    '--border-color': '#ddd',
+    '--placeholder-color': '#999',
     '--background': 'transparent',
     fontSize: '1rem'
   }}
@@ -241,8 +240,7 @@ const Login: React.FC = () => {
           Login
         </IonButton>
 
-        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'  color='white'
->
+        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round' color='medium'>
           Don't have an account? Register here
         </IonButton>
 
@@ -256,7 +254,7 @@ const Login: React.FC = () => {
           message="Login successful! Redirecting..."
           duration={1500}
           position="top"
-          color="orange"
+          color="dark"
         />
       </IonContent>
     </IonPage>
